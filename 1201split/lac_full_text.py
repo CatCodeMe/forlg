@@ -85,11 +85,6 @@ if __name__ == '__main__':
     resultFileName = sys.argv[3]
     contentFile = sys.argv[4]
 
-    # _statFilePrefix = sys.argv[3]
-    # _splitInfo = doSplit(srcFile, contentFile)
-    # _wordInfo = loadWords(contentFile)
-    # doStatistic(_splitInfo, _wordInfo, _statFilePrefix)
     _wordInfo = loadWords(contentFile)
-    # print(_wordInfo)
     doSplit(srcFile, resultDir, resultFileName, _wordInfo)
     print("success")
