@@ -80,24 +80,24 @@ if __name__ == '__main__':
       彩虹桥
     """
     sampleFiles = [
-        # 'hyf/cuocuo_2.txt',
-        # 'hyf/di_san_zhi.txt',
-        # 'hyf/dian_nao.txt',
-        # 'hyf/hua_pi.txt',
-        # 'hyf/liang_ge_haizi.txt',
-        # 'hyf/qing_feng.txt',
-        # 'hyf/tiao_wu.txt',
-        # 'hyf/yue_liang.txt'
+        'hyf/cuocuo_2.txt',
+        'hyf/di_san_zhi.txt',
+        'hyf/dian_nao.txt',
+        'hyf/hua_pi.txt',
+        'hyf/liang_ge_haizi.txt',
+        'hyf/qing_feng.txt',
+        'hyf/tiao_wu.txt',
+        'hyf/yue_liang.txt'
 
-        'chq/bld_x.txt',
-        'chq/byzq_x.txt',
-        'chq/gonggong_x.txt',
-        'chq/hml_x.txt',
-        'chq/jiaoliu_x.txt',
-        'chq/liwa_x.txt',
-        'chq/nvwa_x.txt',
-        'chq/qinshi_x.txt',
-        'chq/woxxin_x.txt'
+        # 'chq/bld_x.txt',
+        # 'chq/byzq_x.txt',
+        # 'chq/gonggong_x.txt',
+        # 'chq/hml_x.txt',
+        # 'chq/jiaoliu_x.txt',
+        # 'chq/liwa_x.txt',
+        # 'chq/nvwa_x.txt',
+        # 'chq/qinshi_x.txt',
+        # 'chq/woxxin_x.txt'
     ]
 
     # word
@@ -106,25 +106,25 @@ if __name__ == '__main__':
     ]
 
     detailWordFiles = [
-        # 'hyf/cuocuo2_detail/'
-        # 'hyf/di_san_zhi_detail/',
-        # 'hyf/dian_nao_detail/',
-        # 'hyf/hua_pi_detail/',
-        # 'hyf/liang_ge_haizi_detail/',
-        # 'hyf/qing_feng_detail/',
-        # 'hyf/ru_guo_detail/',
-        # 'hyf/tiao_wu_detail/',
-        # 'hyf/yue_liang_detail/'
+        'hyf/cuocuo2_detail/',
+        'hyf/di_san_zhi_detail/',
+        'hyf/dian_nao_detail/',
+        'hyf/hua_pi_detail/',
+        'hyf/liang_ge_haizi_detail/',
+        'hyf/qing_feng_detail/',
+        'hyf/ru_guo_detail/',
+        'hyf/tiao_wu_detail/',
+        'hyf/yue_liang_detail/'
 
-        'chq/bld_detail/',
-        'chq/byzq_detail/',
-        'chq/gonggong_detail/',
-        'chq/hml_detail/',
-        'chq/jiaoliu_detail/',
-        'chq/liwa_detail/',
-        'chq/nvwa_detail/',
-        'chq/qinshi_detail/',
-        'chq/woxxin_detail/'
+        # 'chq/bld_detail/',
+        # 'chq/byzq_detail/',
+        # 'chq/gonggong_detail/',
+        # 'chq/hml_detail/',
+        # 'chq/jiaoliu_detail/',
+        # 'chq/liwa_detail/',
+        # 'chq/nvwa_detail/',
+        # 'chq/qinshi_detail/',
+        # 'chq/woxxin_detail/'
     ]
 
     printTable(sampleFiles, contentFiles, detailWordFiles)
