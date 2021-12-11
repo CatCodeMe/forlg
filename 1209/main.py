@@ -89,50 +89,84 @@ if __name__ == '__main__':
       彩虹桥
     """
     sampleFiles = [
-        # 'chq/cuocuocuo.txt',
-        # 'chq/di_san_zhi.txt',
-        # 'chq/dian_nao.txt',
-        # 'chq/hua_pi.txt',
-        # 'chq/liang_ge_haizi.txt',
-        # 'chq/qing_feng.txt',
-        # 'chq/tiao_wu.txt',
-        # 'chq/yue_liang.txt'
+        'hyf/cuocuo_2.txt',
+        'hyf/di_san_zhi.txt',
+        'hyf/dian_nao.txt',
+        'hyf/hua_pi.txt',
+        'hyf/liang_ge_haizi.txt',
+        'hyf/qing_feng.txt',
+        'hyf/ru_guo.txt',
+        'hyf/tiao_wu.txt',
+        'hyf/yue_liang.txt'
 
-        'chq/new/cuocuocuo.txt',
-        'chq/new/di_san_zhi.txt',
-        'chq/new/dian_nao.txt',
-        'chq/new/hua_pi.txt',
-        'chq/new/liang_ge_haizi.txt',
-        'chq/new/qing_feng.txt',
-        'chq/new/tiao_wu.txt',
-        'chq/new/yue_liang.txt'
+
+        # 'chq/bld_x.txt',
+        # 'chq/byzq_x.txt',
+        # 'chq/gonggong_x.txt',
+        # 'chq/hml_x.txt',
+        # 'chq/jiaoliu_x.txt',
+        # 'chq/liwa_x.txt',
+        # 'chq/nvwa_x.txt',
+        # 'chq/qinshi_x.txt',
+        # 'chq/woxxin_x.txt'
     ]
-    # 'hml_x.txt',
-    #  'jiaoliu_x.txt']
+
+    # words
     contentFiles = ['../all_unique', '../a', '../b', '../c', '../d']
 
     detailWordFiles = [
-        'chq/cuocuocuo_detail/',
-        'chq/di_san_zhi_detail/',
-        'chq/dian_nao_detail/',
-        'chq/hua_pi_detail/',
-        'chq/liang_ge_haizi_detail/',
-        'chq/qing_feng_detail/',
-        'chq/ru_guo_detail/',
-        'chq/tiao_wu_detail/',
-        'chq/yue_liang_detail/'
+        # 'chq/bld_detail/',
+        # 'chq/byzq_detail/',
+        # 'chq/gonggong_detail/',
+        # 'chq/hml_detail/',
+        # 'chq/jiaoliu_detail/',
+        # 'chq/liwa_detail/',
+        # 'chq/nvwa_detail/',
+        # 'chq/qinshi_detail/',
+        # 'chq/woxxin_detail/'
+
+        # 'hyf/cuocuo_2.txt',
+        #         'hyf/di_san_zhi.txt',
+        #         'hyf/dian_nao.txt',
+        #         'hyf/hua_pi.txt',
+        #         'hyf/liang_ge_haizi.txt',
+        #         'hyf/qing_feng.txt',
+        #         'hyf/tiao_wu.txt',
+        #         'hyf/yue_liang.txt'
+
+        'hyf/cuocuo_2_detail/',
+        'hyf/di_san_zhi_detail/',
+        'hyf/dian_nao_detail/',
+        'hyf/hua_pi_detail/',
+        'hyf/liang_ge_haizi_detail/',
+        'hyf/qing_feng_detail/',
+        'hyf/ru_guo_detail/',
+        'hyf/tiao_wu_detail/',
+        'hyf/yue_liang_detail/'
     ]
 
     delSignNewSampleFiles = [
-        'chq/new/cuocuocuo.txt',
-        'chq/new/di_san_zhi.txt',
-        'chq/new/dian_nao.txt',
-        'chq/new/hua_pi.txt',
-        'chq/new/liang_ge_haizi.txt',
-        'chq/new/qing_feng.txt',
-        'chq/new/tiao_wu.txt',
-        'chq/new/yue_liang.txt'
+        # 'chq/new/cuocuocuo.txt',
+        # 'chq/new/cuocuo2.txt'
+        # # 'chq/new/di_san_zhi.txt',
+        # # 'chq/new/dian_nao.txt',
+        # # 'chq/new/hua_pi.txt',
+        # # 'chq/new/liang_ge_haizi.txt',
+        # # 'chq/new/qing_feng.txt',
+        # # 'chq/new/tiao_wu.txt',
+        # # 'chq/new/yue_liang.txt'
 
+        # 'hyf/new/ru_guo.txt'
+
+        # 'chq/new/bld_x.txt',
+        # 'chq/new/byzq_x.txt',
+        # 'chq/new/gonggong_x.txt',
+        # 'chq/new/hml_x.txt',
+        # 'chq/new/jiaoliu_x.txt',
+        # 'chq/new/liwa_x.txt',
+        # 'chq/new/nvwa_x.txt',
+        # 'chq/new/qinshi_x.txt',
+        # 'chq/new/woxxin_x.txt'
     ]
 
     printTable(sampleFiles, contentFiles, detailWordFiles)
