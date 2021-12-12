@@ -1,0 +1,17 @@
+chq/bld_x.txt : {} 
+
+chq/byzq_x.txt : {} 
+
+chq/gonggong_x.txt : {'咔', '嚓', '入', '烽'} 
+
+chq/hml_x.txt : {'鞍', '嘘', '入'} 
+
+chq/jiaoliu_x.txt : {'卿', '仲'} 
+
+chq/liwa_x.txt : {'妓'} 
+
+chq/nvwa_x.txt : {} 
+
+chq/qinshi_x.txt : {'亥', '韦', '瘠', '鲍', '蠃', '玺', '搬', '雍', '郡', '韩'} 
+
+chq/woxxin_x.txt : {'入', '炫'}

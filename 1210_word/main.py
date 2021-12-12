@@ -17,6 +17,8 @@ def printTable(_sampleFiles, _contentFiles, _detailWordsDir):
     # hyfTable.set_style(MSWORD_FRIENDLY)
     hyfTable.align = 'l'
 
+    illegal_words_all_unique = {}
+
     for i, sample in enumerate(_sampleFiles):
         hasAdd = False
         _tmpResult = []
@@ -33,20 +35,23 @@ def printTable(_sampleFiles, _contentFiles, _detailWordsDir):
                     _tmpResult.append(_statInfo['wordPercent'])
                     _tmpResult.append(_statInfo['notWordCount'])
                     _tmpResult.append(_statInfo['notWordPercent'])
-                    print(_statInfo['illegal_words'])
-            else:
-                _tmpResult.append(_statInfo['wordCount'])
-                _tmpResult.append(_statInfo['wordPercent'])
-                _detailWordFile = _detailWordsDir[i]
-                if not os.path.exists(_detailWordFile):
-                    os.makedirs(_detailWordFile)
-                with open(_detailWordFile+content[-1], 'w') as f:
-                    for m, word in enumerate(_statInfo['words']):
-                        f.write(word+"\n")
+                    illegal_words_all_unique[sample] = _statInfo['illegal_words']
+            # else:
+            #     _tmpResult.append(_statInfo['wordCount'])
+            #     _tmpResult.append(_statInfo['wordPercent'])
+            #     _detailWordFile = _detailWordsDir[i]
+            #     if not os.path.exists(_detailWordFile):
+            #         os.makedirs(_detailWordFile)
+            #     with open(_detailWordFile+content[-1], 'w') as f:
+            #         for m, word in enumerate(_statInfo['words']):
+            #             f.write(word+"\n")
 
-        hyfTable.add_row(_tmpResult)
-    print(hyfTable)
-    print(hyfTable.get_csv_string())
+        # hyfTable.add_row(_tmpResult)
+    # print(hyfTable)
+    # print(hyfTable.get_csv_string())
+    print('###################################')
+    for key, val in illegal_words_all_unique.items():
+        print(key, ":", val, '\n')
 
 
 def not_in_stat(_sampleFiles, _contentFiles):
@@ -80,25 +85,25 @@ if __name__ == '__main__':
       彩虹桥
     """
     sampleFiles = [
-        'hyf/cuocuo_2.txt',
-        'hyf/di_san_zhi.txt',
-        'hyf/dian_nao.txt',
-        'hyf/hua_pi.txt',
-        'hyf/liang_ge_haizi.txt',
-        'hyf/qing_feng.txt',
-        'hyf/ru_guo.txt',
-        'hyf/tiao_wu.txt',
-        'hyf/yue_liang.txt'
+        # 'hyf/cuocuo_2.txt',
+        # 'hyf/di_san_zhi.txt',
+        # 'hyf/dian_nao.txt',
+        # 'hyf/hua_pi.txt',
+        # 'hyf/liang_ge_haizi.txt',
+        # 'hyf/qing_feng.txt',
+        # 'hyf/ru_guo.txt',
+        # 'hyf/tiao_wu.txt',
+        # 'hyf/yue_liang.txt'
 
-        # 'chq/bld_x.txt',
-        # 'chq/byzq_x.txt',
-        # 'chq/gonggong_x.txt',
-        # 'chq/hml_x.txt',
-        # 'chq/jiaoliu_x.txt',
-        # 'chq/liwa_x.txt',
-        # 'chq/nvwa_x.txt',
-        # 'chq/qinshi_x.txt',
-        # 'chq/woxxin_x.txt'
+        'chq/bld_x.txt',
+        'chq/byzq_x.txt',
+        'chq/gonggong_x.txt',
+        'chq/hml_x.txt',
+        'chq/jiaoliu_x.txt',
+        'chq/liwa_x.txt',
+        'chq/nvwa_x.txt',
+        'chq/qinshi_x.txt',
+        'chq/woxxin_x.txt'
     ]
 
     # word
@@ -107,15 +112,15 @@ if __name__ == '__main__':
     ]
 
     detailWordFiles = [
-        'hyf/cuocuo2_detail/',
-        'hyf/di_san_zhi_detail/',
-        'hyf/dian_nao_detail/',
-        'hyf/hua_pi_detail/',
-        'hyf/liang_ge_haizi_detail/',
-        'hyf/qing_feng_detail/',
-        'hyf/ru_guo_detail/',
-        'hyf/tiao_wu_detail/',
-        'hyf/yue_liang_detail/'
+        # 'hyf/cuocuo2_detail/',
+        # 'hyf/di_san_zhi_detail/',
+        # 'hyf/dian_nao_detail/',
+        # 'hyf/hua_pi_detail/',
+        # 'hyf/liang_ge_haizi_detail/',
+        # 'hyf/qing_feng_detail/',
+        # 'hyf/ru_guo_detail/',
+        # 'hyf/tiao_wu_detail/',
+        # 'hyf/yue_liang_detail/'
 
         # 'chq/bld_detail/',
         # 'chq/byzq_detail/',
