@@ -86,6 +86,7 @@ if __name__ == '__main__':
         'hyf/hua_pi.txt',
         'hyf/liang_ge_haizi.txt',
         'hyf/qing_feng.txt',
+        'hyf/ru_guo.txt',
         'hyf/tiao_wu.txt',
         'hyf/yue_liang.txt'
 
