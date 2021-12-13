@@ -1,0 +1,43 @@
++---------------------------------------------+--------+--------+----------+
+| 样本文件                                    | 总字数 | 句子数 | 平均句长 |
++---------------------------------------------+--------+--------+----------+
+| ../docs/hyf/cuocuo_2.txt                    | 8923   | 325    | 27.4554  |
+| ../docs/hyf/di_san_zhi.txt                  | 12542  | 295    | 42.5153  |
+| ../docs/hyf/dian_nao.txt                    | 10230  | 329    | 31.0942  |
+| ../docs/hyf/hua_pi.txt                      | 14298  | 464    | 30.8147  |
+| ../docs/hyf/liang_ge_haizi.txt              | 7448   | 285    | 26.1333  |
+| ../docs/hyf/qing_feng.txt                   | 9134   | 337    | 27.1039  |
+| ../docs/hyf/ru_guo.txt                      | 10217  | 264    | 38.7008  |
+| ../docs/hyf/tiao_wu.txt                     | 7688   | 227    | 33.8678  |
+| ../docs/hyf/yue_liang.txt                   | 13540  | 376    | 36.0106  |
+| ../docs/chq/bao_lian_deng.txt               | 2666   | 125    | 21.3280  |
+| ../docs/chq/bo_ya_shuai_qin_xie_zhi_yin.txt | 3637   | 155    | 23.4645  |
+| ../docs/chq/gonggong_x.txt                  | 1476   | 65     | 22.7077  |
+| ../docs/chq/hml_x.txt                       | 2248   | 119    | 18.8908  |
+| ../docs/chq/jiaoliu_x.txt                   | 4532   | 205    | 22.1073  |
+| ../docs/chq/liwa_x.txt                      | 7002   | 354    | 19.7797  |
+| ../docs/chq/nvwa_x.txt                      | 1987   | 101    | 19.6733  |
+| ../docs/chq/qinshi_x.txt                    | 6706   | 283    | 23.6961  |
+| ../docs/chq/woxxin_x.txt                    | 5448   | 194    | 28.0825  |
++---------------------------------------------+--------+--------+----------+
+
+
+样本文件,总字数,句子数,平均句长
+../docs/hyf/cuocuo_2.txt,8923,325,27.4554
+../docs/hyf/di_san_zhi.txt,12542,295,42.5153
+../docs/hyf/dian_nao.txt,10230,329,31.0942
+../docs/hyf/hua_pi.txt,14298,464,30.8147
+../docs/hyf/liang_ge_haizi.txt,7448,285,26.1333
+../docs/hyf/qing_feng.txt,9134,337,27.1039
+../docs/hyf/ru_guo.txt,10217,264,38.7008
+../docs/hyf/tiao_wu.txt,7688,227,33.8678
+../docs/hyf/yue_liang.txt,13540,376,36.0106
+../docs/chq/bao_lian_deng.txt,2666,125,21.3280
+../docs/chq/bo_ya_shuai_qin_xie_zhi_yin.txt,3637,155,23.4645
+../docs/chq/gonggong_x.txt,1476,65,22.7077
+../docs/chq/hml_x.txt,2248,119,18.8908
+../docs/chq/jiaoliu_x.txt,4532,205,22.1073
+../docs/chq/liwa_x.txt,7002,354,19.7797
+../docs/chq/nvwa_x.txt,1987,101,19.6733
+../docs/chq/qinshi_x.txt,6706,283,23.6961
+../docs/chq/woxxin_x.txt,5448,194,28.0825
