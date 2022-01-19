@@ -10,10 +10,10 @@ def printTable(_sampleFiles, _contentFiles, _detailWordsDir):
     chqTable = PrettyTable(field_names=["样本文件", "样本词数",
                                         "大纲词", "总占比",
                                         "超纲词", "超纲词占比",
-                                        "甲", "甲占比",
-                                        "乙", "乙占比",
-                                        "丙", "丙占比",
-                                        "丁", "丁占比"])
+                                        "甲", "甲占比","甲_unique",
+                                        "乙", "乙占比","乙_unique",
+                                        "丙", "丙占比","丙_unique",
+                                        "丁", "丁占比",'丁_unique'])
     # chqTable.set_style(MSWORD_FRIENDLY)
     chqTable.align = 'l'
 
@@ -35,12 +35,13 @@ def printTable(_sampleFiles, _contentFiles, _detailWordsDir):
             else:
                 _tmpResult.append(_statInfo['wordCount'])
                 _tmpResult.append(_statInfo['wordPercent'])
+                _tmpResult.append(len(_statInfo['words']))
                 _detailWordFile = _detailWordsDir[i]
-                if not os.path.exists(_detailWordFile):
-                    os.makedirs(_detailWordFile)
-                with open(_detailWordFile+content[-1], 'w') as f:
-                    for m, word in enumerate(_statInfo['words']):
-                        f.write(word+"\n")
+                # if not os.path.exists(_detailWordFile):
+                #     os.makedirs(_detailWordFile)
+                # with open(_detailWordFile+content[-1], 'w') as f:
+                #     for m, word in enumerate(_statInfo['words']):
+                #         f.write(word+"\n")
 
         chqTable.add_row(_tmpResult)
     print(chqTable)
@@ -86,44 +87,44 @@ def writeNew(_srcSampleFiles, _newSampleFiles):
 if __name__ == '__main__':
 
     """
-      彩虹桥
+      汉语风
     """
     sampleFiles = [
-        'hyf/cuocuo_2.txt',
-        'hyf/di_san_zhi.txt',
-        'hyf/dian_nao.txt',
-        'hyf/hua_pi.txt',
-        'hyf/liang_ge_haizi.txt',
-        'hyf/qing_feng.txt',
-        'hyf/ru_guo.txt',
-        'hyf/tiao_wu.txt',
-        'hyf/yue_liang.txt'
+        # 'hyf/cuocuo_2.txt',
+        # 'hyf/di_san_zhi.txt',
+        # 'hyf/dian_nao.txt',
+        # 'hyf/hua_pi.txt',
+        # 'hyf/liang_ge_haizi.txt',
+        # 'hyf/qing_feng.txt',
+        # 'hyf/ru_guo.txt',
+        # 'hyf/tiao_wu.txt',
+        # 'hyf/yue_liang.txt'
 
 
-        # 'chq/bld_x.txt',
-        # 'chq/byzq_x.txt',
-        # 'chq/gonggong_x.txt',
-        # 'chq/hml_x.txt',
-        # 'chq/jiaoliu_x.txt',
-        # 'chq/liwa_x.txt',
-        # 'chq/nvwa_x.txt',
-        # 'chq/qinshi_x.txt',
-        # 'chq/woxxin_x.txt'
+        'chq/bld_x.txt',
+        'chq/byzq_x.txt',
+        'chq/gonggong_x.txt',
+        'chq/hml_x.txt',
+        'chq/jiaoliu_x.txt',
+        'chq/liwa_x.txt',
+        'chq/nvwa_x.txt',
+        'chq/qinshi_x.txt',
+        'chq/woxxin_x.txt'
     ]
 
     # words
     contentFiles = ['../all_unique', '../a', '../b', '../c', '../d']
 
     detailWordFiles = [
-        # 'chq/bld_detail/',
-        # 'chq/byzq_detail/',
-        # 'chq/gonggong_detail/',
-        # 'chq/hml_detail/',
-        # 'chq/jiaoliu_detail/',
-        # 'chq/liwa_detail/',
-        # 'chq/nvwa_detail/',
-        # 'chq/qinshi_detail/',
-        # 'chq/woxxin_detail/'
+        'chq/bld_detail/',
+        'chq/byzq_detail/',
+        'chq/gonggong_detail/',
+        'chq/hml_detail/',
+        'chq/jiaoliu_detail/',
+        'chq/liwa_detail/',
+        'chq/nvwa_detail/',
+        'chq/qinshi_detail/',
+        'chq/woxxin_detail/'
 
         # 'hyf/cuocuo_2.txt',
         #         'hyf/di_san_zhi.txt',
@@ -134,16 +135,20 @@ if __name__ == '__main__':
         #         'hyf/tiao_wu.txt',
         #         'hyf/yue_liang.txt'
 
-        'hyf/cuocuo_2_detail/',
-        'hyf/di_san_zhi_detail/',
-        'hyf/dian_nao_detail/',
-        'hyf/hua_pi_detail/',
-        'hyf/liang_ge_haizi_detail/',
-        'hyf/qing_feng_detail/',
-        'hyf/ru_guo_detail/',
-        'hyf/tiao_wu_detail/',
-        'hyf/yue_liang_detail/'
+        # 'hyf/cuocuo_2_detail/',
+        # 'hyf/di_san_zhi_detail/',
+        # 'hyf/dian_nao_detail/',
+        # 'hyf/hua_pi_detail/',
+        # 'hyf/liang_ge_haizi_detail/',
+        # 'hyf/qing_feng_detail/',
+        # 'hyf/ru_guo_detail/',
+        # 'hyf/tiao_wu_detail/',
+        # 'hyf/yue_liang_detail/'
     ]
+
+    print("start")
+    printTable(sampleFiles, contentFiles, detailWordFiles)
+
 
     delSignNewSampleFiles = [
         # 'chq/new/cuocuocuo.txt',
@@ -168,7 +173,4 @@ if __name__ == '__main__':
         # 'chq/new/qinshi_x.txt',
         # 'chq/new/woxxin_x.txt'
     ]
-
-    printTable(sampleFiles, contentFiles, detailWordFiles)
-
     # writeNew(sampleFiles, delSignNewSampleFiles)
