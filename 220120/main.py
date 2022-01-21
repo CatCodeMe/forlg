@@ -6,18 +6,19 @@ from prettytable import MSWORD_FRIENDLY
 import os
 
 
-def printTable(_sampleFiles, _contentFiles, _detailWordsDir):
-    chqTable = PrettyTable(field_names=["样本文件", "样本词数",
-                                        "大纲词", "总占比",
-                                        "超纲词", "超纲词占比",
-                                        "ws_1", "ws_1占比", "ws_1_u",
-                                        "ws_2", "ws_2占比", "ws_2_u",
-                                        "ws_3", "ws_3占比", "ws_3_u",
-                                        "ws_4", "ws_4占比", "ws_4_u",
-                                        "ws_5", "ws_5占比", "ws_5_u",
-                                        "ws_6", "ws_6占比", "ws_6_u"])
+def printTable(title,_sampleFiles, _contentFiles, _detailWordsDir):
+    chqTable = PrettyTable(field_names=["样本文件", "样本词(字)数",
+                                        "大纲词(字)", "总占比",
+                                        "超纲词(字)", "超纲词(字)占比",
+                                        "1", "1占比", "1去重",
+                                        "2", "2占比", "2去重",
+                                        "3", "3占比", "3去重",
+                                        "4", "4占比", "4去重",
+                                        "5", "5占比", "5去重",
+                                        "6", "6占比", "6去重"])
     # chqTable.set_style(MSWORD_FRIENDLY)
     chqTable.align = 'l'
+    chqTable.title = title
 
     for i, sample in enumerate(_sampleFiles):
         hasAdd = False
@@ -29,7 +30,7 @@ def printTable(_sampleFiles, _contentFiles, _detailWordsDir):
                 _tmpResult.append(sample)
                 _tmpResult.append(_statInfo['totalCount'])
                 hasAdd = True
-                if content == 'words':
+                if content == 'words' or content == 'w_all' :
                     _tmpResult.append(_statInfo['wordCount'])
                     _tmpResult.append(_statInfo['wordPercent'])
                     _tmpResult.append(_statInfo['notWordCount'])
@@ -92,19 +93,18 @@ if __name__ == '__main__':
       汉语风
     """
     sampleFiles = [
-        # 'hyf/cuocuo_2.txt',
-        # 'hyf/di_san_zhi.txt',
-        # 'hyf/dian_nao.txt',
-        # 'hyf/hua_pi.txt',
-        # 'hyf/liang_ge_haizi.txt',
-        # 'hyf/qing_feng.txt',
-        # 'hyf/ru_guo.txt',
-        # 'hyf/tiao_wu.txt',
-        # 'hyf/yue_liang.txt'
+        'hyf/cuocuo_2.txt',
+        'hyf/di_san_zhi.txt',
+        'hyf/dian_nao.txt',
+        'hyf/hua_pi.txt',
+        'hyf/liang_ge_haizi.txt',
+        'hyf/qing_feng.txt',
+        'hyf/ru_guo.txt',
+        'hyf/tiao_wu.txt',
+        'hyf/yue_liang.txt'
 
 
-        'chq/bld_x.txt'
-        # ,
+        # 'chq/bld_x.txt',
         # 'chq/byzq_x.txt',
         # 'chq/gonggong_x.txt',
         # 'chq/hml_x.txt',
@@ -117,11 +117,16 @@ if __name__ == '__main__':
 
     # words
     # contentFiles = ['../all_unique', '../a', '../b', '../c', '../d']
+    # 词
+    title = '国际汉语通用教材-1~6级(词)'
     contentFiles = ['words', 'ws_1', 'ws_2', 'ws_3', 'ws_4', 'ws_5', 'ws_6']
+    
+    # 字
+    # title = '国际汉语通用教材-1~6级(字)'
+    # contentFiles = ['w_all', 'w_1', 'w_2', 'w_3', 'w_4', 'w_5', 'w_6']
 
     detailWordFiles = [
-        'chq/bld_detail/'
-        # ,
+        # 'chq/bld_detail/',
         # 'chq/byzq_detail/',
         # 'chq/gonggong_detail/',
         # 'chq/hml_detail/',
@@ -140,19 +145,19 @@ if __name__ == '__main__':
         # 'hyf/tiao_wu.txt',
         # 'hyf/yue_liang.txt'
 
-        # 'hyf/cuocuo_2_detail/',
-        # 'hyf/di_san_zhi_detail/',
-        # 'hyf/dian_nao_detail/',
-        # 'hyf/hua_pi_detail/',
-        # 'hyf/liang_ge_haizi_detail/',
-        # 'hyf/qing_feng_detail/',
-        # 'hyf/ru_guo_detail/',
-        # 'hyf/tiao_wu_detail/',
-        # 'hyf/yue_liang_detail/'
+        'hyf/cuocuo_2_detail/',
+        'hyf/di_san_zhi_detail/',
+        'hyf/dian_nao_detail/',
+        'hyf/hua_pi_detail/',
+        'hyf/liang_ge_haizi_detail/',
+        'hyf/qing_feng_detail/',
+        'hyf/ru_guo_detail/',
+        'hyf/tiao_wu_detail/',
+        'hyf/yue_liang_detail/'
     ]
 
     print("start")
-    printTable(sampleFiles, contentFiles, detailWordFiles)
+    printTable(title,sampleFiles, contentFiles, detailWordFiles)
 
     delSignNewSampleFiles = [
         # 'chq/new/cuocuocuo.txt',
