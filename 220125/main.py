@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
 import sys
-import note_not_in as not_in
+import note as not_in
 from prettytable import PrettyTable
 from prettytable import MSWORD_FRIENDLY
 import os
@@ -10,11 +10,11 @@ def printTable(title,_sampleFiles, _contentFiles, _detailWordsDir):
     chqTable = PrettyTable(field_names=["样本文件", "样本词(字)数",
                                         "大纲词(字)", "总占比",
                                         "超纲词(字)", "超纲词(字)占比",
-                                        "1", "1占比",
-                                        "2", "2占比",
-                                        "3", "3占比",
-                                        "4", "4占比",
-                                        "5", "5占比",
+                                        "1", "1占比", 
+                                        "2", "2占比", 
+                                        "3", "3占比", 
+                                        "4", "4占比", 
+                                        "5", "5占比", 
                                         "6", "6占比"])
     # chqTable.set_style(MSWORD_FRIENDLY)
     chqTable.align = 'l'
@@ -35,15 +35,21 @@ def printTable(title,_sampleFiles, _contentFiles, _detailWordsDir):
                     _tmpResult.append(_statInfo['wordPercent'])
                     _tmpResult.append(_statInfo['notWordCount'])
                     _tmpResult.append(_statInfo['notWordPercent'])
+                _detailWordFile = _detailWordsDir[i]
+                if not os.path.exists(_detailWordFile):
+                    os.makedirs(_detailWordFile)
+                with open(_detailWordFile+content[-1], 'w') as f:
+                    for m, word in enumerate(_statInfo['illegal_words']):
+                        f.write(word+"\n")
             else:
                 _tmpResult.append(_statInfo['wordCount'])
                 _tmpResult.append(_statInfo['wordPercent'])
                 # _tmpResult.append(len(_statInfo['words']))
-                _detailWordFile = _detailWordsDir[i]
+                # _detailWordFile = _detailWordsDir[i]
                 # if not os.path.exists(_detailWordFile):
                 #     os.makedirs(_detailWordFile)
                 # with open(_detailWordFile+content[-1], 'w') as f:
-                #     for m, word in enumerate(_statInfo['words']):
+                #     for m, word in enumerate(_statInfo['illegal_words']):
                 #         f.write(word+"\n")
 
         chqTable.add_row(_tmpResult)
@@ -93,18 +99,13 @@ if __name__ == '__main__':
       汉语风
     """
     sampleFiles = [
-        # 'hyf/cuocuo_2.txt',
-        # 'hyf/di_san_zhi.txt',
-        # 'hyf/dian_nao.txt',
-        # 'hyf/hua_pi.txt',
-        # 'hyf/liang_ge_haizi.txt',
-        # 'hyf/qing_feng.txt',
-        # 'hyf/ru_guo.txt',
-        # 'hyf/tiao_wu.txt',
-        # 'hyf/yue_liang.txt'
         'hyf/hyf_1.txt',
         'hyf/hyf_2.txt',
         'hyf/hyf_3.txt'
+
+        # 'chq/chq_1.txt',
+        # 'chq/chq_2.txt',
+        # 'chq/chq_3.txt'
 
         # 'chq/bld_x.txt',
         # 'chq/byzq_x.txt',
@@ -117,45 +118,17 @@ if __name__ == '__main__':
         # 'chq/woxxin_x.txt'
     ]
 
-    # words
-    # contentFiles = ['../all_unique', '../a', '../b', '../c', '../d']
     # 词
-    # title = '国际汉语通用教材-1~6级(词)'
-    # contentFiles = ['words', 'ws_1', 'ws_2', 'ws_3', 'ws_4', 'ws_5', 'ws_6']
-    
-    # 字
-    title = '国际汉语通用教材-1~6级(字)'
-    contentFiles = ['w_all', 'w_1', 'w_2', 'w_3', 'w_4', 'w_5', 'w_6']
+    title = '国际汉语通用教材-1~6级(词)【去重】'
+    contentFiles = ['words', 'ws_1', 'ws_2', 'ws_3', 'ws_4', 'ws_5', 'ws_6']
 
     detailWordFiles = [
-        # 'chq/bld_detail/',
-        # 'chq/byzq_detail/',
-        # 'chq/gonggong_detail/',
-        # 'chq/hml_detail/',
-        # 'chq/jiaoliu_detail/',
-        # 'chq/liwa_detail/',
-        # 'chq/nvwa_detail/',
-        # 'chq/qinshi_detail/',
-        # 'chq/woxxin_detail/'
-
-        # 'hyf/cuocuo_2.txt',
-        # 'hyf/di_san_zhi.txt',
-        # 'hyf/dian_nao.txt',
-        # 'hyf/hua_pi.txt',
-        # 'hyf/liang_ge_haizi.txt',
-        # 'hyf/qing_feng.txt',
-        # 'hyf/tiao_wu.txt',
-        # 'hyf/yue_liang.txt'
-
-        'hyf/cuocuo_2_detail/',
-        'hyf/di_san_zhi_detail/',
-        'hyf/dian_nao_detail/',
-        'hyf/hua_pi_detail/',
-        'hyf/liang_ge_haizi_detail/',
-        'hyf/qing_feng_detail/',
-        'hyf/ru_guo_detail/',
-        'hyf/tiao_wu_detail/',
-        'hyf/yue_liang_detail/'
+       'hyf/hyf_1/',
+       'hyf/hyf_2/',
+       'hyf/hyf_3/',
+        # 'chq/chq_1/',
+        # 'chq/chq_2/',
+        # 'chq/chq_3/'
     ]
 
     print("start")
