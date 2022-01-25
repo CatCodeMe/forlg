@@ -6,15 +6,15 @@ from prettytable import MSWORD_FRIENDLY
 import os
 
 
-def printTable(title,_sampleFiles, _contentFiles, _detailWordsDir):
+def printTable(title, _sampleFiles, _contentFiles, _detailWordsDir):
     chqTable = PrettyTable(field_names=["样本文件", "样本词(字)数",
                                         "大纲词(字)", "总占比",
                                         "超纲词(字)", "超纲词(字)占比",
-                                        "1", "1占比", 
-                                        "2", "2占比", 
-                                        "3", "3占比", 
-                                        "4", "4占比", 
-                                        "5", "5占比", 
+                                        "1", "1占比",
+                                        "2", "2占比",
+                                        "3", "3占比",
+                                        "4", "4占比",
+                                        "5", "5占比",
                                         "6", "6占比"])
     # chqTable.set_style(MSWORD_FRIENDLY)
     chqTable.align = 'l'
@@ -30,17 +30,17 @@ def printTable(title,_sampleFiles, _contentFiles, _detailWordsDir):
                 _tmpResult.append(sample)
                 _tmpResult.append(_statInfo['totalCount'])
                 hasAdd = True
-                if content == 'words' or content == 'w_all' :
+                if content == 'words' or content == 'w_all':
                     _tmpResult.append(_statInfo['wordCount'])
                     _tmpResult.append(_statInfo['wordPercent'])
                     _tmpResult.append(_statInfo['notWordCount'])
                     _tmpResult.append(_statInfo['notWordPercent'])
-                _detailWordFile = _detailWordsDir[i]
-                if not os.path.exists(_detailWordFile):
-                    os.makedirs(_detailWordFile)
-                with open(_detailWordFile+content[-1], 'w') as f:
-                    for m, word in enumerate(_statInfo['illegal_words']):
-                        f.write(word+"\n")
+                # _detailWordFile = _detailWordsDir[i]
+                # if not os.path.exists(_detailWordFile):
+                #     os.makedirs(_detailWordFile)
+                # with open(_detailWordFile+content[-1], 'w') as f:
+                #     for m, word in enumerate(_statInfo['illegal_words']):
+                #         f.write(word+"\n")
             else:
                 _tmpResult.append(_statInfo['wordCount'])
                 _tmpResult.append(_statInfo['wordPercent'])
@@ -99,40 +99,40 @@ if __name__ == '__main__':
       汉语风
     """
     sampleFiles = [
-        'hyf/hyf_1.txt',
-        'hyf/hyf_2.txt',
-        'hyf/hyf_3.txt'
+        # 'hyf/hyf_1.txt',
+        # 'hyf/hyf_2.txt',
+        # 'hyf/hyf_3.txt'
 
         # 'chq/chq_1.txt',
         # 'chq/chq_2.txt',
         # 'chq/chq_3.txt'
 
-        # 'chq/bld_x.txt',
-        # 'chq/byzq_x.txt',
-        # 'chq/gonggong_x.txt',
-        # 'chq/hml_x.txt',
-        # 'chq/jiaoliu_x.txt',
-        # 'chq/liwa_x.txt',
-        # 'chq/nvwa_x.txt',
-        # 'chq/qinshi_x.txt',
-        # 'chq/woxxin_x.txt'
+        'chq/bld_x.txt',
+        'chq/byzq_x.txt',
+        'chq/gonggong_x.txt',
+        'chq/hml_x.txt',
+        'chq/jiaoliu_x.txt',
+        'chq/liwa_x.txt',
+        'chq/nvwa_x.txt',
+        'chq/qinshi_x.txt',
+        'chq/woxxin_x.txt'
     ]
 
     # 词
-    title = '国际汉语通用教材-1~6级(词)【去重】'
+    title = '国际汉语通用教材-1~6级(词)'
     contentFiles = ['words', 'ws_1', 'ws_2', 'ws_3', 'ws_4', 'ws_5', 'ws_6']
 
     detailWordFiles = [
-       'hyf/hyf_1/',
-       'hyf/hyf_2/',
-       'hyf/hyf_3/',
+        'hyf/hyf_1/',
+        'hyf/hyf_2/',
+        'hyf/hyf_3/',
         # 'chq/chq_1/',
         # 'chq/chq_2/',
         # 'chq/chq_3/'
     ]
 
     print("start")
-    printTable(title,sampleFiles, contentFiles, detailWordFiles)
+    printTable(title, sampleFiles, contentFiles, detailWordFiles)
 
     delSignNewSampleFiles = [
         # 'chq/new/cuocuocuo.txt',

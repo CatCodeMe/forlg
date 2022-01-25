@@ -54,29 +54,29 @@ def doStatistic(sampleFile, _wordInfo):
                     totalCount += 1
                     _total_current_level_word_set.add(realVal)
                     legal_all_words.append(realVal+'/')
-    r_totalCnt =  len(_total_current_level_word_set)              
+    r_totalCnt = len(_total_current_level_word_set)
     r_wCnt = len(_current_level_word_set)
     r_notWCnt = len(_not_current_level_word_set)
     return {
         # 不去重
-        # "totalCount": totalCount,
-        # "wordCount": wordCount,
-        # "wordPercent": str(format(wordCount/totalCount, '.4f')),
-        # "notWordCount": notWordCount,
-        # "notWordPercent": str(format(notWordCount/totalCount, '.4f')),
-        # "words": _current_level_word_set,
-        # "legal_all_words": legal_all_words,
-        # "illegal_words":  _not_current_level_word_set
-
-        # 去重
-        "totalCount": r_totalCnt,
-        "wordCount": r_wCnt,
-        "wordPercent": str(format(r_wCnt/r_totalCnt,'.4f')),
-        "notWordCount": r_notWCnt,
-        "notWordPercent": str(format(r_notWCnt/r_totalCnt,'.4f')),
+        "totalCount": totalCount,
+        "wordCount": wordCount,
+        "wordPercent": str(format(wordCount/totalCount, '.4f')),
+        "notWordCount": notWordCount,
+        "notWordPercent": str(format(notWordCount/totalCount, '.4f')),
         "words": _current_level_word_set,
         "legal_all_words": legal_all_words,
-        "illegal_words": _not_current_level_word_set
+        "illegal_words":  _not_current_level_word_set
+
+        # 去重
+        # "totalCount": r_totalCnt,
+        # "wordCount": r_wCnt,
+        # "wordPercent": str(format(r_wCnt/r_totalCnt, '.4f')),
+        # "notWordCount": r_notWCnt,
+        # "notWordPercent": str(format(r_notWCnt/r_totalCnt, '.4f')),
+        # "words": _current_level_word_set,
+        # "legal_all_words": legal_all_words,
+        # "illegal_words": _not_current_level_word_set
     }
 
 
