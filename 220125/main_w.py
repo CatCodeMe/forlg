@@ -99,10 +99,6 @@ if __name__ == '__main__':
       汉语风
     """
     sampleFiles = [
-        'hyf/hyf_1.txt',
-        'hyf/hyf_2.txt',
-        'hyf/hyf_3.txt'
-
         # 'chq/chq_1.txt',
         # 'chq/chq_2.txt',
         # 'chq/chq_3.txt'
@@ -116,17 +112,29 @@ if __name__ == '__main__':
         # 'chq/nvwa_x.txt',
         # 'chq/qinshi_x.txt',
         # 'chq/woxxin_x.txt'
+
+        # 'hyf_del/cuocuo.txt',
+        # 'hyf_del/dianao.txt',
+        # 'hyf_del/disanzhi.txt',
+        # 'hyf_del/haizi.txt',
+        # 'hyf_del/huapi.txt',
+        # 'hyf_del/qingfeng.txt',
+        # 'hyf_del/ruguo.txt',
+        # 'hyf_del/tiaowu.txt',
+        # 'hyf_del/yueliang.txt'
+
+        'hyf_del/hyf_del_1',
+        'hyf_del/hyf_del_2',
+        'hyf_del/hyf_del_3'
     ]
 
-    # words
-    # contentFiles = ['../all_unique', '../a', '../b', '../c', '../d']
-    # 词
-    # title = '国际汉语通用教材-1~6级(词)【去重】'
-    # contentFiles = ['words', 'ws_1', 'ws_2', 'ws_3', 'ws_4', 'ws_5', 'ws_6']
-    
     # 字
-    title = '国际汉语通用教材-1~6级(字)'
+    # title = '国际汉语通用教材-1~6级(字)'
+    # contentFiles = ['w_all', 'w_1', 'w_2', 'w_3', 'w_4', 'w_5', 'w_6']
+
+    title = '国际汉语通用教材-1~6级(字)【去重】'
     contentFiles = ['w_all', 'w_1', 'w_2', 'w_3', 'w_4', 'w_5', 'w_6']
+
     # contentFiles = ['w_all']
 
     detailWordFiles = [
